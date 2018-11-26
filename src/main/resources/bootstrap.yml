@@ -1,0 +1,20 @@
+spring:
+  profiles:
+    active: ${configprofile:dev}
+  metrics: 
+    servo: 
+      enabled: false
+  application:
+    name: tcvi-safedrive-backend
+#  cloud:
+#    config:
+#      uri: http://config-server-service.vgc:9092
+#      profile: ${configprofile}
+#      label: master
+
+encrypt:
+  failOnError: false
+  
+management: 
+  security: 
+    enabled: false

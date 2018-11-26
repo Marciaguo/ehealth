@@ -1,0 +1,29 @@
+server:
+  port: 7001
+
+ryu:
+  Id: public
+  userAndPassword: iotcvusr:vXwtj3bF
+  ryuRestUrl: http://localhost:8080
+
+spring:
+  datasource:
+    driverClassName: com.mysql.jdbc.Driver
+    url: jdbc:mysql://cfs-mysql-service:3306/tripInfo?useUnicode=true&useSSL=false&characterEncoding=utf-8&autoReconnect=true&&testOnBorrow=true&validationQuery=select 1
+    username: root
+    password: Passw0rd
+
+mybatis:
+  type-aliases-package: com.zhanglin.networkSlicingBackend.ms.entity
+
+
+
+
+
+
+
+
+
+
+
+
