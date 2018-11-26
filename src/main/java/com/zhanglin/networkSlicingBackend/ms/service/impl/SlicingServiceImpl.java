@@ -18,7 +18,7 @@ import java.util.List;
 public class SlicingServiceImpl implements SlicingService {
 
     @Autowired
-    private RyuRestServiceImpl cviRestService;
+    private RyuRestService cviRestService;
     @Autowired
     SliceMapper sliceMapper;
 

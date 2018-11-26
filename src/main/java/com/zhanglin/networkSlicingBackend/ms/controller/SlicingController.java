@@ -124,6 +124,13 @@ public class SlicingController {
     }
 
 
+    @ApiOperation(value = "get topo" , notes = "")
+    @ResponseBody
+    @RequestMapping(value = "/network/topo", method = RequestMethod.GET, produces = "application/json;charset=UTF-8")
+    public Object getTopo(@RequestParam(value = "switch_id", required = true) String switchId) throws MyException {
+        ///v1.0/topology/links
+        return MyResponse.ok(MyResponse.OK_CODE);
+    }
 
 
     }
