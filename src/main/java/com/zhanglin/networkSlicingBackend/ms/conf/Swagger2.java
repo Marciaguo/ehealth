@@ -29,9 +29,10 @@ public class Swagger2 {
 	private ApiInfo apiInfo() {
 		return new ApiInfoBuilder()
 				.title("Network slicing backend - API")
+//				.title("网络切片后台 - API")
 				.description("[ Base URL: /network-slicing-backend/api ]")
 				.version("1.0")
-                .contact(new Contact("zhanglin", "https://github.com/linyixiao/NetworkSlicingWeb", "@163.com"))
+                .contact(new Contact("Zhang Lin", "https://github.com/linyixiao/NetworkSlicingWeb", "@163.com"))
 				.build();
 	}
 }

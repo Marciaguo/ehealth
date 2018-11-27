@@ -3,7 +3,6 @@ package com.zhanglin.networkSlicingBackend.ms.service.impl;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.zhanglin.networkSlicingBackend.ms.entity.Slice;
-
 import com.zhanglin.networkSlicingBackend.ms.exception.MyException;
 import com.zhanglin.networkSlicingBackend.ms.mapper.SliceMapper;
 import com.zhanglin.networkSlicingBackend.ms.service.SlicingService;
@@ -15,10 +14,10 @@ import java.util.List;
 
 @Slf4j
 @Service
-public class SlicingServiceImpl implements SlicingService {
+public class NetworkServiceImpl implements SlicingService {
 
     @Autowired
-    private RyuRestService ryuRestService;
+    private RyuRestService cviRestService;
     @Autowired
     SliceMapper sliceMapper;
 

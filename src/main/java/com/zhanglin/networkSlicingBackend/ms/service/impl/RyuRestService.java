@@ -26,46 +26,30 @@ public class RyuRestService {
     private RestTemplate restTemplate;
 
 
-    public String a(String tenant_id, String mo_id, String trip_id) throws MyException {
-        String requestURI = UriComponentsBuilder.fromUriString(RYURESTURL + "/datastore/trip/carProbe")
-                .queryParam("tenant_id", tenant_id)
-                .toUriString();
-        log.info("@requestUrl: " + requestURI);
-        String tripPointsRawData = null;
-        try {
-            HttpHeaders requestHeaders = new HttpHeaders();
-            requestHeaders.setContentType(MediaType.APPLICATION_JSON_UTF8);
-            HttpEntity<String> requestEntity = new HttpEntity<String>(requestHeaders);
-            ResponseEntity<String> response = restTemplate.exchange(requestURI, HttpMethod.GET, requestEntity, String.class);
-            tripPointsRawData = response.getBody();
-        } catch (Exception e) {
-            log.info("Failed to get carProbe data from CVI: {}", e.getMessage());
-        }
-        return tripPointsRawData;
-    }
-
-    public String b(String tenant_id, String op, String body) throws MyException {
-        String requestURI = UriComponentsBuilder.fromUriString(RYURESTURL + "/carProbeList")
-                .queryParam("tenant_id", tenant_id)
-                .toUriString();
-        log.info("@requestUrl: " + requestURI);
-        String result = null;
-        try {
-            HttpHeaders requestHeaders = new HttpHeaders();
-            requestHeaders.setContentType(MediaType.APPLICATION_JSON_UTF8);
-            HttpEntity<String> requestEntity = new HttpEntity<String>(body, requestHeaders);
-            ResponseEntity<String> response = restTemplate.exchange(requestURI, HttpMethod.POST, requestEntity, String.class);
-            result = response.getBody();
-        } catch (Exception e) {
-            log.info("Failed to send carProbe list to CVI:{}", e.getMessage());
-            //throw new MyException(MyException.FAIL, "Failed to send carProbe list to CVI");
-        }
-        return result;
-    }
-
-
-
-    public String get_flow_table(String dpid) {
+    //        {
+    //            "1": [
+    //            {
+    //                "length": 88,
+    //                    "table_id": 0,
+    //                    "duration_sec": 2,
+    //                    "duration_nsec": 6.76e+08,
+    //                    "priority": 11111,
+    //                    "idle_timeout": 0,
+    //                    "hard_timeout": 0,
+    //                    "flags": 1,
+    //                    "cookie": 1,
+    //                    "packet_count": 0,
+    //                    "byte_count": 0,
+    //                    "match": {
+    //                "in_port": 1
+    //            },
+    //                "actions": [
+    //                "OUTPUT:2"
+    //          ]
+    //            }
+    //      ]
+    //        }
+    public String getFlowTable(String dpid) {
         String requestURI = UriComponentsBuilder.fromUriString(RYURESTURL + "/stats/flow/" + dpid)
                 .toUriString();
         log.info("@requestUrl: " + requestURI);
@@ -82,7 +66,33 @@ public class RyuRestService {
         return responseBody;
     }
 
-    private String get_switch_port(String dpid){
+
+    //{
+    //  "1": [
+    //    {
+    //      "port_no": 1,
+    //      "rx_packets": 9,
+    //      "tx_packets": 6,
+    //      "rx_bytes": 738,
+    //      "tx_bytes": 252,
+    //      "rx_dropped": 0,
+    //      "tx_dropped": 0,
+    //      "rx_errors": 0,
+    //      "tx_errors": 0,
+    //      "rx_frame_err": 0,
+    //      "rx_over_err": 0,
+    //      "rx_crc_err": 0,
+    //      "collisions": 0,
+    //      "duration_sec": 12,
+    //      "duration_nsec": 9.76e+08
+    //    },
+    //    {
+    //      :
+    //      :
+    //    }
+    //  ]
+    //}
+    private String getPortStats(String dpid){
         String requestURI = UriComponentsBuilder.fromUriString(RYURESTURL + "/stats/port/" + dpid)
                 .toUriString();
         log.info("@requestUrl: " + requestURI);
@@ -99,7 +109,26 @@ public class RyuRestService {
         return responseBody;
     }
 
-    private String add_flow(String body){
+    //$ curl -X POST -d '{
+    //    "dpid": 1,
+    //    "cookie": 1,
+    //    "cookie_mask": 1,
+    //    "table_id": 0,
+    //    "idle_timeout": 30,
+    //    "hard_timeout": 30,
+    //    "priority": 11111,
+    //    "flags": 1,
+    //    "match":{
+    //        "in_port":1
+    //    },
+    //    "actions":[
+    //        {
+    //            "type":"OUTPUT",
+    //            "port": 2
+    //        }
+    //    ]
+    // }' http://localhost:8080/stats/flowentry/add
+    private String addFlowEntry(String body){
         String add_flow_url = "%s/stats/flowentry/add" ;
 
         //return req.status_code
@@ -125,22 +154,14 @@ public class RyuRestService {
         String requestURI = UriComponentsBuilder.fromUriString(RYURESTURL + "/stats/flowentry/delete" )
                 .toUriString();
         log.info("@requestUrl: " + requestURI);
-        String responseBody = null;
-        try {
-            HttpHeaders requestHeaders = new HttpHeaders();
-            requestHeaders.setContentType(MediaType.APPLICATION_JSON_UTF8);
-            HttpEntity<String> requestEntity = new HttpEntity<String>(requestHeaders);
-            ResponseEntity<String> response = restTemplate.exchange(requestURI, HttpMethod.GET, requestEntity, String.class);
-            responseBody  = response.getBody();
-        } catch (Exception e) {
-            log.info("Failed to get flow table: {}", e.getMessage());
-        }
-        return responseBody;
+        return null;
     }
 
 
    // get_topology
+
     private String getSwitches(){
+        // /stats/switches
         String requestURI = UriComponentsBuilder.fromUriString(RYURESTURL + "/v1.0/topology/switches" )
                 .toUriString();
         log.info("@requestUrl: " + requestURI);
@@ -171,7 +192,6 @@ public class RyuRestService {
             log.info("Failed to get flow table: {}", e.getMessage());
         }
         return responseBody;
-
     }
 
 
@@ -212,6 +232,16 @@ public class RyuRestService {
     }
 
 
+
+
+
+
+
+
+
+
+
+
     /**
      * below are official document
      */
@@ -225,6 +255,7 @@ public class RyuRestService {
     }
 
 
+
     //Get the desc stats of the switch which specified with Datapath ID in URI.
     //$ curl -X GET http://localhost:8080/stats/desc/1
     ////    {
@@ -236,10 +267,10 @@ public class RyuRestService {
     ////                "dp_desc": "None"
     ////    }
     ////    }
-    private void getSwitchDesc(){
+    private void getSwitchDesc(String dpid){
         List<String> list = getAllSwitches();
         for (int i = 0;i < list.size();i++){
-            String get_switch_desc_url = "/stats/desc/%s";
+            String get_switch_desc_url = "/stats/desc/" + dpid;
         }
 
     }
@@ -445,7 +476,7 @@ public class RyuRestService {
     //    }
     //  ]
     //}
-    public String getPortStats(String dpid) {
+    public String getPortStats0(String dpid) {
         String get_flow_table_url = "/stats/port/" ;
         return null;
 
