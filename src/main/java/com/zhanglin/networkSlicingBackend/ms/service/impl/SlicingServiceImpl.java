@@ -41,7 +41,7 @@ public class SlicingServiceImpl implements SlicingService {
 
         JsonNode tripPoints = null;
         try {
-            String tripPointsRawData = cviRestService.getCarProbeDataForATripFromCvi(tenantId, moId, tripId);
+            String tripPointsRawData = null;
             ObjectMapper mapper = new ObjectMapper();
             tripPoints = mapper.readTree(tripPointsRawData);
             log.info("get carprobe successfullly: {}", tripPoints);

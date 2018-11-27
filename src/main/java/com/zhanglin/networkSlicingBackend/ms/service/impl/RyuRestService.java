@@ -212,9 +212,10 @@ public class RyuRestService {
     }
 
 
+    /**
+     * below are official document
+     */
 
-
-    //below are official document
 
     //Get the list of all switches which connected to the controller.
     private List getAllSwitches(){
