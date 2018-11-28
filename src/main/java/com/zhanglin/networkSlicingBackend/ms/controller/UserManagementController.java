@@ -1,13 +1,13 @@
 package com.zhanglin.networkSlicingBackend.ms.controller;
 
+import com.zhanglin.networkSlicingBackend.ms.entity.User;
 import com.zhanglin.networkSlicingBackend.ms.exception.MyException;
 import com.zhanglin.networkSlicingBackend.ms.model.MyResponse;
-import com.zhanglin.networkSlicingBackend.ms.model.User;
 import com.zhanglin.networkSlicingBackend.ms.model.UserLoginRequest;
-import io.swagger.annotations.ApiImplicitParam;
-import io.swagger.annotations.ApiImplicitParams;
+import com.zhanglin.networkSlicingBackend.ms.service.impl.UserServiceImpl;
 import io.swagger.annotations.ApiOperation;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
@@ -17,6 +17,8 @@ import javax.validation.Valid;
 public class UserManagementController {
 
 
+    @Autowired
+    UserServiceImpl userService;
     /**
      * User login
      * @param userLoginRequest
@@ -27,7 +29,7 @@ public class UserManagementController {
     @ResponseBody
     @RequestMapping(value = "/user/login", method = RequestMethod.POST, produces = "application/json;charset=UTF-8")
     public MyResponse<User> userLogin(@RequestBody @Valid UserLoginRequest userLoginRequest) throws MyException {
-        return MyResponse.ok("ok");
+        return MyResponse.ok(userService.login(userLoginRequest));
     }
 
     /**
