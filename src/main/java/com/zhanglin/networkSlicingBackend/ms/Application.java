@@ -11,8 +11,7 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 @SpringBootApplication
 
 @EnableSwagger2
-@ComponentScan
-
+//@ComponentScan("com.zhanglin.networkSlicingBackend.ms.controller")
 @EnableAutoConfiguration
 public class Application implements CommandLineRunner{
 	@Override

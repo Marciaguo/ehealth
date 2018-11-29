@@ -1,29 +1,27 @@
 package com.zhanglin.networkSlicingBackend.ms.service.impl;
 
-import com.fasterxml.jackson.databind.JsonNode;
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.zhanglin.networkSlicingBackend.ms.entity.Slice;
+
 import com.zhanglin.networkSlicingBackend.ms.entity.User;
 import com.zhanglin.networkSlicingBackend.ms.exception.MyException;
-import com.zhanglin.networkSlicingBackend.ms.mapper.SliceMapper;
 import com.zhanglin.networkSlicingBackend.ms.mapper.UserMapper;
 import com.zhanglin.networkSlicingBackend.ms.model.UserLoginRequest;
-import com.zhanglin.networkSlicingBackend.ms.service.SlicingService;
+
+import com.zhanglin.networkSlicingBackend.ms.service.UserService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
 
 @Slf4j
 @Service
-public class UserServiceImpl {
+public class UserServiceImpl implements UserService {
 
     @Autowired
     private RyuRestService cviRestService;
 
 
-    public User login(UserLoginRequest userLoginRequest) throws MyException {
+    public User login(UserLoginRequest userLoginRequest)  throws MyException {
+        log.info("userLoginRequest"+userLoginRequest);
         User user = null;
         try {
             //user = userMapper.queryUserByUserName(userLoginRequest.getUserName());
@@ -31,7 +29,7 @@ public class UserServiceImpl {
             user = new User();
             user.setUserName("13121766988");
             user.setPassword("password");
-            user.setUserLable("good");
+            user.setNumber("1");
         } catch (Exception e) {
             throw new MyException(MyException.FAIL,"用户"+ userLoginRequest.getUserName() + "查询出错");
         }
@@ -44,6 +42,8 @@ public class UserServiceImpl {
             // Check password
             if (user.getPassword().equals(userLoginRequest.getPassword())) {
                 // Check role
+                log.info("用户{}登陆成功",user.getUserName());
+                log.info("用户信息{}",user.toString());
                 return user;
             } else {
                 throw new MyException(MyException.FAIL,"用户名或密码错误");

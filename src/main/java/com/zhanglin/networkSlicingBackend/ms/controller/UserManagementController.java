@@ -14,6 +14,7 @@ import javax.validation.Valid;
 
 @Slf4j
 @RestController
+@CrossOrigin(origins = "http://localhost:49362")
 public class UserManagementController {
 
 
@@ -28,8 +29,9 @@ public class UserManagementController {
     @ApiOperation(value = "user login", notes = "")
     @ResponseBody
     @RequestMapping(value = "/user/login", method = RequestMethod.POST, produces = "application/json;charset=UTF-8")
-    public MyResponse<User> userLogin(@RequestBody @Valid UserLoginRequest userLoginRequest) throws MyException {
-        return MyResponse.ok(userService.login(userLoginRequest));
+    public Object userLogin(@RequestBody @Valid UserLoginRequest userLoginRequest) throws MyException {
+//        return MyResponse.ok(userService.login(userLoginRequest));
+        return userService.login(userLoginRequest);
     }
 
     /**
@@ -40,6 +42,7 @@ public class UserManagementController {
      */
     @ApiOperation(value = "user logout", notes = "user logout")
     @ResponseBody
+    @CrossOrigin
     @RequestMapping(value = "/user/logout", method = RequestMethod.POST, produces = "application/json;charset=UTF-8")
     public MyResponse logout(@RequestParam @Valid String userEmail) throws MyException {
 
