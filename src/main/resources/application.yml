@@ -3,8 +3,8 @@ server:
 
 ryu:
   Id: public
-  userAndPassword: iotcvusr:vXwtj3bF
-  ryuRestUrl: http://127.0.0.1:8080
+#  ryuRestUrl: http://127.0.0.1:8080
+  ryuRestUrl: http://192.168.231.129:8080
 
 spring:
   datasource:

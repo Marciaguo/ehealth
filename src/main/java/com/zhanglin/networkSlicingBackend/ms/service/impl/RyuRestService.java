@@ -11,7 +11,6 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 import org.springframework.web.util.UriComponentsBuilder;
 
-import java.util.Base64;
 import java.util.List;
 
 @Service
@@ -92,7 +91,7 @@ public class RyuRestService {
     //    }
     //  ]
     //}
-    private String getPortStats(String dpid){
+    public String getPortStats(String dpid){
         String requestURI = UriComponentsBuilder.fromUriString(RYURESTURL + "/stats/port/" + dpid)
                 .toUriString();
         log.info("@requestUrl: " + requestURI);
@@ -128,7 +127,7 @@ public class RyuRestService {
     //        }
     //    ]
     // }' http://localhost:8080/stats/flowentry/add
-    private String addFlowEntry(String body){
+    public String addFlowEntry(String body){
         String add_flow_url = "%s/stats/flowentry/add" ;
 
         //return req.status_code
@@ -149,7 +148,7 @@ public class RyuRestService {
     }
 
 
-    private String del_flow(String req_data){
+    public String del_flow(String req_data){
         //return req.status_code;
         String requestURI = UriComponentsBuilder.fromUriString(RYURESTURL + "/stats/flowentry/delete" )
                 .toUriString();
@@ -160,24 +159,31 @@ public class RyuRestService {
 
    // get_topology
 
-    private String getSwitches(){
+    public String getSwitches(){
         // /stats/switches
-        String requestURI = UriComponentsBuilder.fromUriString(RYURESTURL + "/v1.0/topology/switches" )
+//        String requestURI = UriComponentsBuilder.fromUriString(RYURESTURL + "/v1.0/topology/switches" )
+//                .toUriString();\
+        String requestURI = UriComponentsBuilder.fromUriString(RYURESTURL + "/stats/switches" )
                 .toUriString();
+        //response: [1,2,3,4,5,6]
         log.info("@requestUrl: " + requestURI);
         String responseBody = null;
         try {
             HttpHeaders requestHeaders = new HttpHeaders();
-            requestHeaders.setContentType(MediaType.APPLICATION_JSON_UTF8);
+            //requestHeaders.setContentType(MediaType.APPLICATION_JSON_UTF8);
             HttpEntity<String> requestEntity = new HttpEntity<String>(requestHeaders);
             ResponseEntity<String> response = restTemplate.exchange(requestURI, HttpMethod.GET, requestEntity, String.class);
             responseBody  = response.getBody();
+            log.info(response.getBody());
+
+
         } catch (Exception e) {
-            log.info("Failed to get flow table: {}", e.getMessage());
+            e.printStackTrace();
+            log.info("Failed to get switches: {}", e.getMessage());
         }
         return responseBody;
     }
-    private String getLinks(){
+    public String getLinks(){
         String requestURI = UriComponentsBuilder.fromUriString(RYURESTURL + "/v1.0/topology/links" )
                 .toUriString();
         log.info("@requestUrl: " + requestURI);
@@ -213,7 +219,7 @@ public class RyuRestService {
     }
 
 
-    private String getHost(){
+    public String getHost(){
         String requestURI = UriComponentsBuilder.fromUriString(RYURESTURL + "/v1.0/topology/hosts")
                 .toUriString();
         log.info("@requestUrl: " + requestURI);
@@ -337,7 +343,7 @@ public class RyuRestService {
     //        }
     //  ]
     //    }
-    public String GetAggregateFlowStats(String dpid){
+    public String getAggregateFlowStats(String dpid){
         return null;
 
     }
@@ -362,7 +368,7 @@ public class RyuRestService {
     //    }
     //  ]
     //}
-    public String GetAggregateFlowStatsByFields(String dpid){
+    public String getAggregateFlowStatsByFields(String dpid){
         return null;
 
     }
@@ -442,7 +448,7 @@ public class RyuRestService {
     //    ...
     //  ]
     //}
-    public String GetTableFeatures(String dpid) {
+    public String getTableFeatures(String dpid) {
         String get_flow_table_url = "stats/tablefeatures/%s" ;
         return null;
 
@@ -560,7 +566,7 @@ public class RyuRestService {
     //        }
     //    ]
     // }' http://localhost:8080/stats/flowentry/add
-    public String AddAFlowEntry() {
+    public String addAFlowEntry() {
         String get_flow_table_url = "/stats/flowentry/add" ;
         return null;
 

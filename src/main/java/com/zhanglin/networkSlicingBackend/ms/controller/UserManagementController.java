@@ -14,7 +14,7 @@ import javax.validation.Valid;
 
 @Slf4j
 @RestController
-@CrossOrigin(origins = "http://localhost:49362")
+@CrossOrigin
 public class UserManagementController {
 
 

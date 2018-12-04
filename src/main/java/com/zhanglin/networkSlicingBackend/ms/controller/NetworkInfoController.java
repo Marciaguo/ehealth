@@ -2,10 +2,12 @@ package com.zhanglin.networkSlicingBackend.ms.controller;
 
 import com.zhanglin.networkSlicingBackend.ms.exception.MyException;
 import com.zhanglin.networkSlicingBackend.ms.model.MyResponse;
+import com.zhanglin.networkSlicingBackend.ms.service.impl.RyuRestService;
 import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiImplicitParams;
 import io.swagger.annotations.ApiOperation;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
@@ -15,6 +17,8 @@ import javax.validation.Valid;
 @RequestMapping("/networkInformation")
 public class NetworkInfoController {
 
+    @Autowired
+    RyuRestService ryuRestService;
 
     @ApiOperation(value = "get all OVS switches", notes = "")
     @ApiImplicitParams({})
@@ -22,28 +26,29 @@ public class NetworkInfoController {
     @RequestMapping(value = "/switches", method = RequestMethod.GET, produces = "application/json;charset=UTF-8")
     public Object getAllSwitch() throws MyException {
         //'/v1.0/topology/switches'
-        return MyResponse.ok(MyResponse.OK_CODE);
+//        return MyResponse.ok(MyResponse.OK_CODE);
+        return ryuRestService.getSwitches();
+
     }
 
     @ApiOperation(value = "get all hosts", notes = "")
     @ApiImplicitParams({})
     @ResponseBody
     @RequestMapping(value = "/host", method = RequestMethod.GET, produces = "application/json;charset=UTF-8")
-    public Object getAllHost(@RequestParam(value = "slice_id", required = true) String sliceId,
-                              @RequestParam(value = "slice_name", required = true) String sliceName) throws MyException {
-        return MyResponse.ok(MyResponse.OK_CODE);
+    public Object getAllHost() throws MyException {
+        return ryuRestService.getHost();
     }
 
-
-    @ApiOperation(value = "get one switch info" , notes = "")
-    @ApiImplicitParams({@ApiImplicitParam(name = "switch_id", value = "the switch_id ", paramType = "query", defaultValue = "001", required = true)
-    })
-    @ResponseBody
-    @RequestMapping(value = "/switchInfo", method = RequestMethod.GET, produces = "application/json;charset=UTF-8")
-    public Object getOneSwitch(@RequestParam(value = "switch_id", required = true) String switchId) throws MyException {
-        // '/v1.0/topology/switches/dpid
-        return MyResponse.ok(MyResponse.OK_CODE);
-    }
+//
+//    @ApiOperation(value = "get one switch info" , notes = "")
+//    @ApiImplicitParams({@ApiImplicitParam(name = "switch_id", value = "the switch_id ", paramType = "query", defaultValue = "001", required = true)
+//    })
+//    @ResponseBody
+//    @RequestMapping(value = "/switchInfo", method = RequestMethod.GET, produces = "application/json;charset=UTF-8")
+//    public Object getOneSwitch(@RequestParam(value = "switch_id", required = true) String switchId) throws MyException {
+//        // '/v1.0/topology/switches/dpid
+//        return MyResponse.ok(MyResponse.OK_CODE);
+//    }
 
 
     @ApiOperation(value = "get links info" , notes = "")
@@ -51,7 +56,7 @@ public class NetworkInfoController {
     @RequestMapping(value = "/links", method = RequestMethod.GET, produces = "application/json;charset=UTF-8")
     public Object getLinks(@RequestParam(value = "switch_id", required = true) String switchId) throws MyException {
         ///v1.0/topology/links
-        return MyResponse.ok(MyResponse.OK_CODE);
+        return ryuRestService.getLinks();
     }
 
 
@@ -69,7 +74,7 @@ public class NetworkInfoController {
     @RequestMapping(value = "/trafficInfo", method = RequestMethod.GET, produces = "application/json;charset=UTF-8")
     public Object getTrafficInfo(@RequestParam(value = "switch_id", required = true) String switchId) throws MyException {
         ///v1.0/topology/links
-        return MyResponse.ok(MyResponse.OK_CODE);
+        return ryuRestService.getPortStats(switchId);
     }
 
     }
