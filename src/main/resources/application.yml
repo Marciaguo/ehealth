@@ -1,20 +1,26 @@
 server:
-  port: 7001
-
-ryu:
-  Id: public
-#  ryuRestUrl: http://127.0.0.1:8080
-  ryuRestUrl: http://192.168.231.129:8080
+  port: 8001
 
 spring:
+  # HTTP ENCODING
+  http:
+    encoding.charset: UTF-8
+    encoding.enable: true
+    encoding.force: true
+
   datasource:
     driverClassName: com.mysql.jdbc.Driver
-    url: jdbc:mysql://cfs-mysql-service:3306/tripInfo?useUnicode=true&useSSL=false&characterEncoding=utf-8&autoReconnect=true&&testOnBorrow=true&validationQuery=select 1
+    url: jdbc:mysql://127.0.0.1:3306/tripInfo?useUnicode=true&useSSL=false&characterEncoding=utf-8&autoReconnect=true&&testOnBorrow=true&validationQuery=select 1
     username: root
     password: Passw0rd
 
+  mvc:
+    view:
+      prefix: /WEB-INF/jsp/
+      suffix: .jsp
+
 mybatis:
-  type-aliases-package: com.zhanglin.networkSlicingBackend.ms.entity
+  type-aliases-package: com.guoshanyi.ehealth.model
 
 
 

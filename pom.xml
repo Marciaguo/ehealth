@@ -3,13 +3,13 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.zhanglin</groupId>
-    <artifactId>network-slicing-backend</artifactId>
+    <groupId>com.guoshanyi</groupId>
+    <artifactId>ehealth</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <packaging>jar</packaging>
+    <packaging>war</packaging>
 
-    <name>network-slicing-backend</name>
-    <description>Network-slicing-backend project for Spring Boot</description>
+    <name>ehealth</name>
+    <description>ehealth project for Spring Boot</description>
 
     <parent>
         <groupId>org.springframework.boot</groupId>
@@ -57,25 +57,6 @@
             <optional>true</optional>
         </dependency>
 
-        <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-zuul</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-eureka</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-feign</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-config</artifactId>
-        </dependency>
         <!---->
         <!--<dependency>-->
         <!--<groupId>org.springframework.boot</groupId>-->
@@ -142,6 +123,43 @@
         <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
+        </dependency>
+
+        <!--springboot tomcat jsp 支持开启-->
+
+        <!-- tomcat 的支持.-->
+
+        <dependency>
+
+            <groupId>org.springframework.boot</groupId>
+
+            <artifactId>spring-boot-starter-tomcat</artifactId>
+
+            <!--<scope>provided</scope>-->
+
+        </dependency>
+        <!--新加-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+
+
+        <!--新加结束-->
+
+        <dependency>
+
+            <groupId>org.apache.tomcat.embed</groupId>
+
+            <artifactId>tomcat-embed-jasper</artifactId>
+
+            <!--<scope>provided</scope>-->
+
+        </dependency>
+
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>jstl</artifactId>
         </dependency>
 
     </dependencies>
