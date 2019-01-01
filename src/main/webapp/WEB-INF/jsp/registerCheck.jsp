@@ -25,7 +25,7 @@ String DBUser = "root"; //mysql用户名
 String DBPasswd = "123456"; //mysql密码 
 String DBName = "ehealth"; //数据库名 
 
-String connUrl = "jdbc:mysql://101.201.40.158/" + DBName + "?user=" + DBUser + "&password=" + DBPasswd; 
+String connUrl = "jdbc:mysql://127.0.0.1/" + DBName + "?user=" + DBUser + "&password=" + DBPasswd;
 Class.forName(driverName).newInstance(); 
 Connection conn = DriverManager.getConnection(connUrl); 
 Statement stmt = conn.createStatement(); 
@@ -43,7 +43,7 @@ if(flag){
 	ResultSet rs1 = stmt.executeQuery("select * from user where tel='"+ tel +"'");//查询用户名是否已经存在 
 	if(rs1.next()){
 	  flag=false;
-	  out.print("<script>alert('注册信息已经存在！');window.location.href='register.jsp'</script>");
+	  out.print("<script>alert('注册信息已经存在！');window.location.href='register'</script>");
 	}
 	else{
      try { 
@@ -58,11 +58,11 @@ try {
    //判断身份跳转医生主页、病人主页
     if(rs.next() && flag) { 
 	if("d".equals(d_p))
-    response.sendRedirect("static/doctorIndex.jsp");
+    response.sendRedirect("doctorIndex");
 	if("p".equals(d_p))
-	 response.sendRedirect("static/patientIndex.jsp");
+	 response.sendRedirect("patientIndex");
    } else if(!flag ){
-	 out.print("<script>alert('注册信息不能为空！');window.location.href='register.jsp'</script>");
+	 out.print("<script>alert('注册信息不能为空！');window.location.href='register'</script>");
     }
 }catch(Exception e) { 
 e.printStackTrace(); 

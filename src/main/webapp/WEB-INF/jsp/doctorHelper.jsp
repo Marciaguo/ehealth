@@ -96,24 +96,24 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					<div class="top-header">
 						<div class="container">
 							<div class="logo">
-							  <a href="doctorIndex.jsp"><h2>北京大学<span>第一医院</span></h2></a>
+							  <a href="doctorIndex"><h2>北京协和医院</h2></a>
 						    </div>
 					     <div class="top-menu">
 							<span class="menu"> </span>
 								<ul class="cl-effect-16">
-								<li><a href="doctorIndex.jsp" data-hover="主页">主页</a></li>
-								<li><a href="doctorAbout.jsp" data-hover="关于">关于</a></li>
-								<li><a class="active" href="doctorHelper.jsp" data-hover="门诊助手">门诊助手</a></li>
-								<li><a href="doctorPatient.jsp" data-hover="我的病人">我的病人</a></li>
-								<li><a href="doctorAppoint.jsp" data-hover="日程管理">日程管理</a></li>
-								<li><a href="doctorSetting.jsp" data-hover="设置">设置</a></li>
+								<li><a href="doctorIndex" data-hover="主页">主页</a></li>
+								<li><a href="doctorAbout" data-hover="关于">关于</a></li>
+								<li><a class="active" href="doctorHelper" data-hover="门诊助手">门诊助手</a></li>
+								<li><a href="doctorPatient" data-hover="我的病人">我的病人</a></li>
+								<li><a href="doctorAppoint" data-hover="日程管理">日程管理</a></li>
+								<li><a href="doctorSetting" data-hover="设置">设置</a></li>
 								<li style="color: white">|</li>
 								<li><span class="glyphicon glyphicon-qrcode"  data-toggle="modal" data-target="#scanQRcode" data-backdrop="static" style="cursor: pointer;color: white"></span></li>
 								<li class="dropdown" style="text-align: left;">
 									<a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-user"></span></a>
 									<ul class="dropdown-menu" role="menu" id="doctor-contents">
-										<li><a href="doctorProfile.jsp"><span class="glyphicon glyphicon-cog"></span> 修改资料</a></li>
-										<li><a href="login.jsp"><span class="glyphicon glyphicon-log-out"></span> 退出</a></li>
+										<li><a href="doctorProfile"><span class="glyphicon glyphicon-cog"></span> 修改资料</a></li>
+										<li><a href="login"><span class="glyphicon glyphicon-log-out"></span> 退出</a></li>
 									</ul>
 			  					</li>		
 								  <div class="clearfix"></div>
@@ -187,14 +187,14 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						<td><%=sqlRst.getString(3)%></td>
 						<td><%=sqlRst.getString(4)%></td>
 						<td><%=sqlRst.getString(10)%></td>
-			                 <td><a href="doctorHelperShow.jsp?id=<%=sqlRst.getString(3)%>&tel=<%=sqlRst.getString(12)%>" value="<%=sqlRst.getString(3)%>"><i class="glyphicon glyphicon-search templatemo-social-icon" title="查看" ></i></a>
+			                 <td><a href="doctorHelperShow?id=<%=sqlRst.getString(3)%>&tel=<%=sqlRst.getString(12)%>" value="<%=sqlRst.getString(3)%>"><i class="glyphicon glyphicon-search templatemo-social-icon" title="查看" ></i></a>
 			                  <i class="glyphicon glyphicon-pencil templatemo-social-icon" title="维护诊疗计划" data-toggle="modal" data-target="#<%=sqlRst.getString(2)%>" data-backdrop="static" ></i>
 							  <i class="glyphicon glyphicon-th-list templatemo-social-icon" title="分组" data-toggle="modal" data-target="#<%=i+(intPage-1)*intPageSize+1%>" data-backdrop="static" ></i>
 							  <!-- 进行分组 -->
 							  <div id="<%=i+(intPage-1)*intPageSize+1%>" class="modal fade" >							            
 								<div class="modal-dialog" style="margin-top: 10%;width:450px;height: 100%">								 	
 						            <div class="modal-content">
-						            <form  method="post" action="clinicGroupAdd.jsp">
+						            <form  method="post" action="clinicGroupAdd">
 						            <input name="groupid" style="display:none" value="<%=sqlRst.getString(1)%>"  >	
 						                <div class="modal-header">
 						                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
@@ -231,7 +231,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 						                    <h4 class="modal-title">维护诊疗计划</h4>
 						                </div>
-						                 <form  method="post" action="doctorHelperMedicineAddShortcut.jsp">	
+						                 <form  method="post" action="doctorHelperMedicineAddShortcut">
 							                <div class="modal-body contact-grid" style="height:470px;">								               				                	
 							                	<input name="medicinetime" style="display:none" value="<%=sqlRst.getString(3)%>">
 							                	<input name="medicinetel" style="display:none" value="<%=sqlRst.getString(12)%>">							                
@@ -295,9 +295,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							<nav>
 							 第<%=intPage%>页 共<%=intPageCount%>页  
 							<%if(intPage<intPageCount){%>
-							<a href="doctorHelper.jsp?page=<%=intPage+1%>">下一页</a><%}else if(intPage==intPageCount) {%><a href="#">下一页</a><%}%>
+							<a href="doctorHelper?page=<%=intPage+1%>">下一页</a><%}else if(intPage==intPageCount) {%><a href="#">下一页</a><%}%>
 							<%if(intPage>1){%>
-							<a href="doctorHelper.jsp?page=<%=intPage-1%>">上一页</a><%}else {%><a href="#">上一页</a><%}%>
+							<a href="doctorHelper?page=<%=intPage-1%>">上一页</a><%}else {%><a href="#">上一页</a><%}%>
 							</nav>		
 							</div>
 					<div class="clearfix"></div>
@@ -323,7 +323,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	  		<div class="footer text-center" style="padding-bottom: 0; text-align: center;">
 				<div class="container">
 					<div class="copy">
-		              <p style="color: black">Copyright &copy; 2016. School of Electronics Engineering and Computer Science, Peking University.</p>
+		              <p style="color: black">Copyright &copy; 2018. Information office, Peking Union Medical College Hospital.</p>
 		            </div>
 				</div>
 			</div>

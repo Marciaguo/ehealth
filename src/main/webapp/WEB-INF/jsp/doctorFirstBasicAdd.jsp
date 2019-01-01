@@ -26,7 +26,7 @@ response.setContentType("text/html; charset=utf-8");
 		</c:if>
 		</c:catch>
 		<c:out value="${error}"></c:out><br>
-		<c:redirect url="/static/doctorSetting.jsp">
+		<c:redirect url="/static/doctorSetting">
 		</c:redirect>
 		<c:set var="temp" value="value" scope="session"></c:set>
 	</body>

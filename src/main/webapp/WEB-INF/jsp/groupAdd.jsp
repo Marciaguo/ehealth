@@ -16,7 +16,7 @@ response.setContentType("text/html; charset=utf-8");
 <title>设置页面新增组别</title>
 </head>
 	<body>
-		<sql:setDataSource var="dataSour" driver="com.mysql.jdbc.Driver" url="jdbc:mysql://101.201.40.158:3306/ehealth?useUnicode=true&characterEncoding=gbk" user="root" password="123456" />
+		<sql:setDataSource var="dataSour" driver="com.mysql.jdbc.Driver" url="jdbc:mysql://127.0.0.1:3306/ehealth?useUnicode=true&characterEncoding=gbk" user="root" password="123456" />
 		<c:catch var="error">
 		<c:set var="newitem" value="<%=newitem %>" />
 		<c:if test="${newitem !='' and newitem!=null}">
@@ -26,7 +26,7 @@ response.setContentType("text/html; charset=utf-8");
 		</c:if>
 		</c:catch>
 		<c:out value="${error}"></c:out><br>
-		<c:redirect url="/static/doctorSetting.jsp">
+		<c:redirect url="/static/doctorSetting">
 		</c:redirect>
 		<c:set var="temp" value="value" scope="session"></c:set>
 	</body>

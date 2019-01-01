@@ -29,6 +29,6 @@ update clinic_assistant set divide = ? where idmenzhen=?
 </sql:update>
 </c:catch>
 <c:out value="${error}"></c:out><br>
-<c:redirect url="/static/doctorHelper.jsp" />
+<c:redirect url="doctorHelper" />
 </body>
 </html>

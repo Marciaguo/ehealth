@@ -37,7 +37,7 @@
 	//装载JDBC驱动程序
 	Class.forName("com.mysql.jdbc.Driver").newInstance();
 	//设置数据库连接字符串
-	strCon="jdbc:mysql://101.201.40.158:3306/ehealth";
+	strCon="jdbc:mysql://127.0.0.1:3306/ehealth";
 	//连接数据库
 	sqlCon=java.sql.DriverManager.getConnection(strCon,"root","123456");
 	//创建一个可以滚动的只读的SQL语句对象
@@ -104,24 +104,24 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					<div class="top-header">
 						<div class="container">
 							<div class="logo">
-							  <a href="doctorIndex.jsp"><h2>北京大学<span>第一医院</span></h2></a>
+							  <a href="doctorIndex"><h2>北京协和医院</h2></a>
 						    </div>
 					     <div class="top-menu">
 							<span class="menu"> </span>
 								<ul class="cl-effect-16">
-								<li><a href="doctorIndex.jsp" data-hover="主页">主页</a></li>
-								<li><a href="doctorAbout.jsp" data-hover="关于">关于</a></li>
-								<li><a href="doctorHelper.jsp" data-hover="门诊助手">门诊助手</a></li>
-								<li><a class="active" href="doctorPatient.jsp" data-hover="我的病人">我的病人</a></li>
-								<li><a href="doctorAppoint.jsp" data-hover="日程管理">日程管理</a></li>
-								<li><a href="doctorSetting.jsp" data-hover="设置">设置</a></li>
+								<li><a href="doctorIndex" data-hover="主页">主页</a></li>
+								<li><a href="doctorAbout" data-hover="关于">关于</a></li>
+								<li><a href="doctorHelper" data-hover="门诊助手">门诊助手</a></li>
+								<li><a class="active" href="doctorPatient" data-hover="我的病人">我的病人</a></li>
+								<li><a href="doctorAppoint" data-hover="日程管理">日程管理</a></li>
+								<li><a href="doctorSetting" data-hover="设置">设置</a></li>
 								<li style="color: white">|</li>
 								<li><span class="glyphicon glyphicon-qrcode"  data-toggle="modal" data-target="#scanQRcode" data-backdrop="static" style="cursor: pointer;color: white"></span></li>
 								<li class="dropdown" style="text-align: left;">
 									<a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-user"></span></a>
 									<ul class="dropdown-menu" role="menu" id="doctor-contents">
-										<li><a href="doctorProfile.jsp"><span class="glyphicon glyphicon-cog"></span> 修改资料</a></li>
-										<li><a href="login.jsp"><span class="glyphicon glyphicon-log-out"></span> 退出</a></li>
+										<li><a href="doctorProfile"><span class="glyphicon glyphicon-cog"></span> 修改资料</a></li>
+										<li><a href="login"><span class="glyphicon glyphicon-log-out"></span> 退出</a></li>
 									</ul>
 			  					</li>		
 								  <div class="clearfix"></div>
@@ -145,7 +145,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	<div class="about second">
 		<div class="container" style="margin-top:-40px">
 		 <h3 class="tittle wel" style="font-size: 1.9em">我的病人</h3>
-		 <form method="post" action="patientQuery.jsp" id ="patientQuery">
+		 <form method="post" action="patientQuery" id ="patientQuery">
 		 <div class="selectbox" style="height:50px">
 		 <div class="selemediv"> <div class="selemenu" id="patientGroup"><span style="font-weight: bold;">请选择组别</span></div>
 			<DIV class="citylist group">
@@ -276,8 +276,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						<td><%=sqlRst.getString(9)%></td>
 						<td><%=sqlRst.getString(10)%></td>
 						<td>
-			                  <a href="doctorPatientEach.jsp?name=<%=sqlRst.getString(2)%>&divide=<%=sqlRst.getString(9)%>&tell=<%=sqlRst.getString(11)%>">
-			                   <form style="display:inline" action="doctorPatientEach.jsp" method="post"><input name="tell" style="display:none" value="<%=sqlRst.getString(11)%>">
+			                  <a href="doctorPatientEach?name=<%=sqlRst.getString(2)%>&divide=<%=sqlRst.getString(9)%>&tell=<%=sqlRst.getString(11)%>">
+			                   <form style="display:inline" action="doctorPatientEach" method="post"><input name="tell" style="display:none" value="<%=sqlRst.getString(11)%>">
 			                     <input style="display:none" type="submit"><i class="glyphicon glyphicon-search templatemo-social-icon" title="查看" ></i>
 			                   </form>
 			                  </a>
@@ -289,7 +289,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			                    <div id="<%=sqlRst.getString(1)%>" class="modal fade" >
 									  <div class="modal-dialog" style="margin-top: 10%;width:450px;height: 100%">
 							            <div class="modal-content">
-							            <form  method="post" action="doctorPatientGroupAdd.jsp">
+							            <form  method="post" action="doctorPatientGroupAdd">
 						                <input name="groupid" style="display:none" value="<%=sqlRst.getString(1)%>"  >
 						                 <input name="intpage" style="display:none" value="<%=intPage%>"  >						                	
 							                <div class="modal-header">
@@ -353,7 +353,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 						                    <h4 class="modal-title">维护诊疗计划</h4>
 						                </div>
-						                 <form  method="post" action="doctorPatientMedicineAddShortcut.jsp">	
+						                 <form  method="post" action="doctorPatientMedicineAddShortcut">
 							                <div class="modal-body contact-grid" style="height:500px;">								               				                	
 							                	<input name="medicinetime" style="display:none" value="<%=sqlRst.getString(4)%>">
 							                	<input name="medicinetel" style="display:none" value="<%=sqlRst.getString(11)%>">							                
@@ -469,9 +469,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				<nav>
 					 第<%=intPage%>页 共<%=intPageCount%>页  
 					<%if(intPage<intPageCount){%>
-					<a href="doctorPatient.jsp?page=<%=intPage+1%>">下一页</a><%}else if(intPage==intPageCount) {%><a href="#">下一页</a><%}%>
+					<a href="doctorPatient?page=<%=intPage+1%>">下一页</a><%}else if(intPage==intPageCount) {%><a href="#">下一页</a><%}%>
 					<%if(intPage>1){%>
-					<a href="doctorPatient.jsp?page=<%=intPage-1%>">上一页</a><%}else {%><a href="#">上一页</a><%}%>
+					<a href="doctorPatient?page=<%=intPage-1%>">上一页</a><%}else {%><a href="#">上一页</a><%}%>
 				  </nav>		
 				</div>
 			<div class="clearfix"></div>

@@ -70,24 +70,24 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					<div class="top-header">
 						<div class="container">
 							<div class="logo">
-							  <a href="doctorIndex.jsp"><h2>北京大学<span>第一医院</span></h2></a>
+							  <a href="doctorIndex"><h2>北京协和医院</h2></a>
 						    </div>
 					     <div class="top-menu">
 							<span class="menu"> </span>
 								<ul class="cl-effect-16">
-								<li><a href="doctorIndex.jsp" data-hover="主页">主页</a></li>
-								<li><a href="doctorAbout.jsp" data-hover="关于">关于</a></li>
-								<li><a href="doctorHelper.jsp" data-hover="门诊助手">门诊助手</a></li>
-								<li><a href="doctorPatient.jsp" data-hover="我的病人">我的病人</a></li>
-								<li><a href="doctorAppoint.jsp" data-hover="日程管理">日程管理</a></li>
-								<li><a class="active" href="doctorSetting.jsp" data-hover="设置">设置</a></li>
+								<li><a href="doctorIndex" data-hover="主页">主页</a></li>
+								<li><a href="doctorAbout" data-hover="关于">关于</a></li>
+								<li><a href="doctorHelper" data-hover="门诊助手">门诊助手</a></li>
+								<li><a href="doctorPatient" data-hover="我的病人">我的病人</a></li>
+								<li><a href="doctorAppoint" data-hover="日程管理">日程管理</a></li>
+								<li><a class="active" href="doctorSetting" data-hover="设置">设置</a></li>
 								<li style="color: white">|</li>
 								<li><span class="glyphicon glyphicon-qrcode"  data-toggle="modal" data-target="#scanQRcode" data-backdrop="static" style="cursor: pointer;color: white"></span></li>
 								<li class="dropdown" style="text-align: left;">
 									<a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-user"></span></a>
 									<ul class="dropdown-menu" role="menu" id="doctor-contents">
-										<li><a href="doctorProfile.jsp"><span class="glyphicon glyphicon-cog"></span> 修改资料</a></li>
-										<li><a href="login.jsp"><span class="glyphicon glyphicon-log-out"></span> 退出</a></li>
+										<li><a href="doctorProfile"><span class="glyphicon glyphicon-cog"></span> 修改资料</a></li>
+										<li><a href="login"><span class="glyphicon glyphicon-log-out"></span> 退出</a></li>
 									</ul>
 			  					</li>		
 								  <div class="clearfix"></div>
@@ -139,7 +139,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							//装载JDBC驱动程序
 							Class.forName("com.mysql.jdbc.Driver").newInstance();
 							//设置数据库连接字符串
-							strCon1="jdbc:mysql://101.201.40.158:3306/ehealth";
+							strCon1="jdbc:mysql://127.0.0.1:3306/ehealth";
 							//连接数据库
 							sqlCon1=java.sql.DriverManager.getConnection(strCon1,"root","123456");
 							//创建一个可以滚动的只读的SQL语句对象
@@ -151,7 +151,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							//获取记录总数
 							sqlRst1.last();
 							%>
-					<form method="post" action="doctorFirstBasicAdd.jsp">
+					<form method="post" action="doctorFirstBasicAdd">
 
 					<div id="firstnew">
 				    	<div class="col-md-4" id="firstHeight">
@@ -388,7 +388,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					//获取记录总数
 					sqlRst.last();
 				%>
-					<form method="post" action="doctorClinicBasicAdd.jsp">
+					<form method="post" action="doctorClinicBasicAdd">
 					 <div id="clinicbasiclast">
 				    	<div class="col-md-4">
 						<p class="col-md-4 your-para" style="padding-top: 3%">身高</p>
@@ -620,7 +620,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
               	</div>
               <div id="collapseFive" class="panel-collapse collapse in">
                 <div class="panel-body contact-grid"> 
-                <form method="post" action="groupAdd.jsp">
+                <form method="post" action="groupAdd">
                     <%
 							//变量声明
 							java.sql.ResultSet sqlRstG; //结果集对象

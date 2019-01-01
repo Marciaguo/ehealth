@@ -30,7 +30,7 @@ html,body{width:100%;height: 100%;margin: 0;padding:0}
 
 	</div>
 	<div class="center" >
-		<form action="loginCheck.jsp" id="formOne" method="post" style="padding-top: 60px;"><!--  onsubmit="return submitB()" -->
+		<form action="loginCheck" id="formOne" method="post" style="padding-top: 60px;"><!--  onsubmit="return submitB()" -->
 			<i class="fa fa-user Cone" style="padding-left: 5px; padding-top: 2px; color: white;">  | </i>
 			<input type="phone" name="user" id="user" placeholder="手机号"onblur="checkUser()" style="color: white;width:250px;height;42px"/>
 			<span id="user_pass"></span>
@@ -45,7 +45,7 @@ html,body{width:100%;height: 100%;margin: 0;padding:0}
 			<span id="surePwd_pass" ></span><br/>-->
 			<input type="submit" value="登录" id="submit" name="submit" style="text-align: center;padding: 0;width:250px;height;42px" > <!-- location.href='doctorIndex.html'onclick="fun_a()" -->
 			<br /><br />
-			 <span style="color: white; padding-left: 23.5%">没有账号？请点击</span><a href="register.jsp" style="text-decoration: none;"><span style="color:#20CBBE;">注册</span><span style="color: white; ">。</span></a>
+			 <span style="color: white; padding-left: 23.5%">没有账号？请点击</span><a href="register" style="text-decoration: none;"><span style="color:#20CBBE;">注册</span><span style="color: white; ">。</span></a>
 			<!--<br/><br/><br/>-->
            <!--<SPAN style="float: right;">-->
 			   <!--<A style="background: rgb(0, 142, 173); color: rgb(255, 255, 255);padding: 7px 10px;border-radius: 4px;border: 1px solid-->

@@ -68,7 +68,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
               </div>
               <div id="collapseOne" class="panel-collapse collapse in">
                 <div class="panel-body"> 
-					<form action="registerCheck.jsp" method="post">
+					<form action="registerCheck" method="post">
 
 						<div class="col-md-6">
 						<p class="col-md-3 your-para" style="padding-top: 3%">手机号</p>
@@ -271,7 +271,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			<div class="footer text-center" style="padding-bottom: 0; text-align: center;">
 				<div class="container">
 					<div class="copy">
-		              <p style="color: black">Copyright &copy; 2016. School of Electronics Engineering and Computer Science, Peking University.</p>
+		              <p style="color: black">Copyright &copy; 2018. Information office, Peking Union Medical College Hospital.</p>
 		            </div>
 				</div>
 			</div>

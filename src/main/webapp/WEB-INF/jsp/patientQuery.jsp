@@ -59,7 +59,7 @@
 	//装载JDBC驱动程序
 	Class.forName("com.mysql.jdbc.Driver").newInstance();
 	//设置数据库连接字符串
-	strCon="jdbc:mysql://101.201.40.158:3306/ehealth?useUnicode=true&characterEncoding=gbk";
+	strCon="jdbc:mysql://127.0.0.1:3306/ehealth?useUnicode=true&characterEncoding=gbk";
 	//连接数据库
 	sqlCon=java.sql.DriverManager.getConnection(strCon,"root","123456");
 	//创建一个可以滚动的只读的SQL语句对象
@@ -181,24 +181,24 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					<div class="top-header">
 						<div class="container">
 							<div class="logo">
-							  <a href="doctorIndex.html"><h2>北京大学<span>第一医院</span></h2></a>
+							  <a href="doctorIndex.html"><h2>北京协和医院</h2></a>
 						    </div>
 					     <div class="top-menu">
 							<span class="menu"> </span>
 								<ul class="cl-effect-16">
-								<li><a href="doctorIndex.jsp" data-hover="主页">主页</a></li>
+								<li><a href="doctorIndex" data-hover="主页">主页</a></li>
 								<li><a href="doctorAbout.html" data-hover="关于">关于</a></li>
-								<li><a href="doctorHelper.jsp" data-hover="门诊助手">门诊助手</a></li>
-								<li><a class="active" href="doctorPatient.jsp" data-hover="我的病人">我的病人</a></li>
-								<li><a href="doctorAppoint.jsp" data-hover="日程管理">日程管理</a></li>
-								<li><a href="doctorSetting.jsp" data-hover="设置">设置</a></li>
+								<li><a href="doctorHelper" data-hover="门诊助手">门诊助手</a></li>
+								<li><a class="active" href="doctorPatient" data-hover="我的病人">我的病人</a></li>
+								<li><a href="doctorAppoint" data-hover="日程管理">日程管理</a></li>
+								<li><a href="doctorSetting" data-hover="设置">设置</a></li>
 								<li style="color: white">|</li>
 								<li><span class="glyphicon glyphicon-qrcode"  data-toggle="modal" data-target="#scanQRcode" data-backdrop="static" style="cursor: pointer;color: white"></span></li>
 								<li class="dropdown" style="text-align: left;">
 									<a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-user"></span></a>
 									<ul class="dropdown-menu" role="menu" id="doctor-contents">
-										<li><a href="doctorProfile.jsp"><span class="glyphicon glyphicon-cog"></span> 修改资料</a></li>
-										<li><a href="login.jsp"><span class="glyphicon glyphicon-log-out"></span> 退出</a></li>
+										<li><a href="doctorProfile"><span class="glyphicon glyphicon-cog"></span> 修改资料</a></li>
+										<li><a href="login"><span class="glyphicon glyphicon-log-out"></span> 退出</a></li>
 									</ul>
 			  					</li>		
 								  <div class="clearfix"></div>
@@ -274,7 +274,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			                     <div id="<%=sqlRst.getString(1)%>" class="modal fade" >
 									<div class="modal-dialog" style="margin-top: 10%;width:450px;height: 100%">
 							            <div class="modal-content">
-							            <form  method="post" action="doctorPatientGroupAdd.jsp">
+							            <form  method="post" action="doctorPatientGroupAdd">
 						                <input name="groupid" style="display:none" value="<%=sqlRst.getString(1)%>"  >
 						                 <input name="intpage" style="display:none" value="<%=intPage%>"  >						                	
 							                <div class="modal-header">
@@ -319,24 +319,24 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				<nav>
 					 第<%=intPage%>页 共<%=intPageCount%>页 
 					<%if(intPage<intPageCount){%>
-					 <form action="patientQuery.jsp?page=<%=intPage+1%>" method="post" style="display:inline">
+					 <form action="patientQuery?page=<%=intPage+1%>" method="post" style="display:inline">
 					 <input id="fatrange" type='hidden' name="fatrange" value="<%=fatrange %>">
 					 <input id="sugarrange" type='hidden' name="sugarrange" value="<%=sugarrange %>">
 					 <input id="group" type='hidden' name="group" value="<%=group %>">
 					 <input id="bmirange" type='hidden' name="bmirange" value="<%=bmirange %>">
 					 <input id="classification" type='hidden' name="classification" value="<%=classification %>">
 					 <input id="time" type='hidden' name="time" value="<%=time %>">
-					<a href="patientQuery.jsp?page=<%=intPage+1%>"><input style="border:0px;background-color:white" type="submit" value="下一页"></a><%}else if(intPage==intPageCount) {%><a href="#">下一页</a><%}%>
+					<a href="patientQuery?page=<%=intPage+1%>"><input style="border:0px;background-color:white" type="submit" value="下一页"></a><%}else if(intPage==intPageCount) {%><a href="#">下一页</a><%}%>
 					</form>
 					<%if(intPage>1){%>
-					 <form action="patientQuery.jsp?page=<%=intPage-1%>" method="post" style="display:inline">
+					 <form action="patientQuery?page=<%=intPage-1%>" method="post" style="display:inline">
 					 <input id="fatrange" type='hidden' name="fatrange" value="<%=fatrange %>">
 					 <input id="sugarrange" type='hidden' name="sugarrange" value="<%=sugarrange %>">
 					 <input id="group" type='hidden' name="group" value="<%=group %>">
 					 <input id="bmirange" type='hidden' name="bmirange" value="<%=bmirange %>">
 					 <input id="classification" type='hidden' name="classification" value="<%=classification %>">
 					 <input id="time" type='hidden' name="time" value="<%=time %>">
-					<a href="patientQuery.jsp?page=<%=intPage-1%>"><input style="border:0px;background-color:white" type="submit" value="上一页"></a><%}else {%><a href="#">上一页</a><%}%>
+					<a href="patientQuery?page=<%=intPage-1%>"><input style="border:0px;background-color:white" type="submit" value="上一页"></a><%}else {%><a href="#">上一页</a><%}%>
 					</form>
 				  </nav>		
 				</div>

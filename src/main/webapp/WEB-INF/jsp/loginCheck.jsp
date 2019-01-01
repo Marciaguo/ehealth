@@ -21,7 +21,7 @@ try{
 	String DBUser = "root"; //mysql用户名 
 	String DBPasswd = "123456"; //mysql密码 
 	String DBName = "ehealth"; //数据库名 
-	String connUrl = "jdbc:mysql://101.201.40.158/" + DBName + "?user=" + DBUser + "&password=" + DBPasswd; 
+	String connUrl = "jdbc:mysql://127.0.0.1/" + DBName + "?user=" + DBUser + "&password=" + DBPasswd;
 	Class.forName(driverName).newInstance(); 
     Connection con=DriverManager.getConnection(connUrl);
     Statement sql=con.createStatement();
@@ -34,13 +34,13 @@ try{
      //session.setAttribute("QQ_name",Q_name);//把获取的Qname列值存在session容器中并标关键字为QQ_name。 保存的数据可以用session.geiAttribute来获取。
      String d_p=rs.getString("d_p");
      if("d".equals(d_p))
-     response.sendRedirect("static/doctorIndex.jsp");
+     response.sendRedirect("static/doctorIndex.html");
      if("p".equals(d_p))
-     response.sendRedirect("PatientIndex.jsp");	 
+     response.sendRedirect("PatientIndex.html");
    }
   else{
     // response.sendRedirect("register.html");
-     out.print("<script>alert('用户不存在，请仔细检查您的账号密码！');window.location.href='login.jsp'</script>");
+     out.print("<script>alert('用户不存在，请仔细检查您的账号密码！');window.location.href='login'</script>");
    }
    con.close();
 }

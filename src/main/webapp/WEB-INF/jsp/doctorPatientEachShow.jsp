@@ -43,24 +43,24 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					<div class="top-header">
 						<div class="container">
 							<div class="logo">
-							  <a href="doctorIndex.html"><h2>北京大学<span>第一医院</span></h2></a>
+							  <a href="doctorIndex.html"><h2>北京协和医院</h2></a>
 						    </div>
 					     <div class="top-menu">
 							<span class="menu"> </span>
 								<ul class="cl-effect-16">
-								<li><a href="doctorIndex.jsp" data-hover="主页">主页</a></li>
+								<li><a href="doctorIndex" data-hover="主页">主页</a></li>
 								<li><a href="doctorAbout.html" data-hover="关于">关于</a></li>
-								<li><a href="doctorHelper.jsp" data-hover="门诊助手">门诊助手</a></li>
-								<li><a class="active" href="doctorPatient.jsp" data-hover="我的病人">我的病人</a></li>
-								<li><a href="doctorAppoint.jsp" data-hover="日程管理">日程管理</a></li>
+								<li><a href="doctorHelper" data-hover="门诊助手">门诊助手</a></li>
+								<li><a class="active" href="doctorPatient" data-hover="我的病人">我的病人</a></li>
+								<li><a href="doctorAppoint" data-hover="日程管理">日程管理</a></li>
 								<li><a href="doctorSetting.html" data-hover="设置">设置</a></li>
 								<li style="color: white">|</li>
 								<li><span class="glyphicon glyphicon-qrcode"  data-toggle="modal" data-target="#scanQRcode" data-backdrop="static" style="cursor: pointer;color: white"></span></li>
 								<li class="dropdown" style="text-align: left;">
 									<a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-user"></span></a>
 									<ul class="dropdown-menu" role="menu" id="doctor-contents">
-										<li><a href="doctorProfile.jsp"><span class="glyphicon glyphicon-cog"></span> 修改资料</a></li>
-										<li><a href="login.jsp"><span class="glyphicon glyphicon-log-out"></span> 退出</a></li>
+										<li><a href="doctorProfile"><span class="glyphicon glyphicon-cog"></span> 修改资料</a></li>
+										<li><a href="login"><span class="glyphicon glyphicon-log-out"></span> 退出</a></li>
 									</ul>
 			  					</li>		
 								  <div class="clearfix"></div>
@@ -88,7 +88,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					<div class="panel-group" id="accordion">
 					    <!-- 连接数据库 -->
 						<c:catch var="ex">
-		                <sql:setDataSource var="dataSour" driver="com.mysql.jdbc.Driver" url="jdbc:mysql://101.201.40.158:3306/ehealth" user="root" password="123456"/>
+		                <sql:setDataSource var="dataSour" driver="com.mysql.jdbc.Driver" url="jdbc:mysql://127.0.0.1:3306/ehealth" user="root" password="123456"/>
 		                </c:catch>
 		                <c:if test="${ex != null}">
 		                                                    数据库连接失败，请联系管理员！
@@ -288,7 +288,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 									<p class="col-md-2 your-para">下次随访时间：</p>
 						<!-- 连接数据库 -->
 						<c:catch var="ex">
-		                <sql:setDataSource var="dataSour" driver="com.mysql.jdbc.Driver" url="jdbc:mysql://101.201.40.158:3306/ehealth" user="root" password="123456"/>
+		                <sql:setDataSource var="dataSour" driver="com.mysql.jdbc.Driver" url="jdbc:mysql://127.0.0.1:3306/ehealth" user="root" password="123456"/>
 		                </c:catch>
 		                <c:if test="${ex != null}">
 		                                                    数据库连接失败，请联系管理员！
@@ -338,7 +338,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			<div class="footer text-center" style="padding-bottom: 0; text-align: center;">
 				<div class="container">
 					<div class="copy">
-		              <p style="color: black">Copyright &copy; 2016. School of Electronics Engineering and Computer Science, Peking University.</p>
+		              <p style="color: black">Copyright &copy; 2018. Information office, Peking Union Medical College Hospital.</p>
 		            </div>
 				</div>
 			</div>

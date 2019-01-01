@@ -36,7 +36,7 @@ try{
 	String DBUser = "root"; //mysql用户名 
 	String DBPasswd = "123456"; //mysql密码 
 	String DBName = "ehealth"; //数据库名 
-	String connUrl = "jdbc:mysql://101.201.40.158/" + DBName + "?useUnicode=true&characterEncoding=gbk"; 
+	String connUrl = "jdbc:mysql://127.0.0.1/" + DBName + "?useUnicode=true&characterEncoding=gbk";
 	Class.forName(driverName).newInstance(); 
     Connection con=DriverManager.getConnection(connUrl,DBUser,DBPasswd);
     Statement sql=con.createStatement();
@@ -48,14 +48,14 @@ try{
 	     {
 	      boolean hasResultSet = stmt.execute("update user set pwd='"+ newpass +"'where tel='"+user+"'");
 	      if (hasResultSet) {
-	    	  out.print("<script>alert('对不起，修改失败！');window.location.href='doctorProfile.jsp'</script>");
+	    	  out.print("<script>alert('对不起，修改失败！');window.location.href='doctorProfile'</script>");
 	      }else{
-	    	  out.print("<script>alert('恭喜修改成功！');window.location.href='login.jsp'</script>");   	  
+	    	  out.print("<script>alert('恭喜修改成功！');window.location.href='login'</script>");
 	      }       
 	     }else if(newpass.equals("")){
-	    	 out.print("<script>alert('新密码不能为空！');window.location.href='doctorProfile.jsp'</script>");
+	    	 out.print("<script>alert('新密码不能为空！');window.location.href='doctorProfile'</script>");
 	        }else{
-	        	out.print("<script>alert('新密码两次输入不相同，请重新输入！');window.location.href='doctorProfile.jsp'</script>");
+	        	out.print("<script>alert('新密码两次输入不相同，请重新输入！');window.location.href='doctorProfile'</script>");
 	        }
       if(!name.equals("")){
     	  boolean hasResultSet = stmt.execute("update user set name='"+ name +"'where tel='"+user+"'");
@@ -88,7 +88,7 @@ try{
     }
    else{
     // response.sendRedirect("register.html");
-     out.print("<script>alert('用户不存在！');window.location.href='doctorProfile.jsp'</script>");
+     out.print("<script>alert('用户不存在！');window.location.href='doctorProfile'</script>");
    }
    con.close();
 }

@@ -43,16 +43,16 @@
 			<div class="col-md-offset-2 col-md-8 col-sm-12">
 				<div class="home-thumb">
 					<h1 class="wow fadeInUp" data-wow-delay="0.4s">E-Health欢迎您</h1>
-          			<h3 class="wow fadeInUp" data-wow-delay="0.6s"><strong>北京大学</strong>第一医院<strong>欢迎您</strong>使用本系统！请<strong>登录</strong>以获得更多资讯。
+          			<h3 class="wow fadeInUp" data-wow-delay="0.6s"><strong>北京协和</strong>医院<strong>欢迎您</strong>使用本系统！请<strong>登录</strong>以获得更多资讯。
           			</h3>
-          			<a href="login.jsp" class="btn btn-lg btn-default smoothScroll wow fadeInUp hidden-xs" data-wow-delay="0.8s">点击登录</a>
+          			<a href="login" class="btn btn-lg btn-default smoothScroll wow fadeInUp hidden-xs" data-wow-delay="0.8s">点击登录</a>
 				</div>
 			</div>
 		</div>
     <div class="footerIndex0" style="position: fixed; bottom: 0; margin-right: auto;margin-left: auto;">
 				<div class="container">
 					<div class="copy">
-		              <p style="color: white">Copyright &copy; 2016. School of Electronics Engineering and Computer Science, Peking University.</p>
+		              <p style="color: white">Copyright &copy; 2018. Information office, Peking Union Medical College Hospital.</p>
 		            </div>
 				</div>
 			</div>

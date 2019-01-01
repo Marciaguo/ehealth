@@ -42,23 +42,23 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					<div class="top-header">
 						<div class="container">
 							<div class="logo">
-							  <a href="patientIndex.jsp"><h2>北京大学<span>第一医院</span></h2></a>
+							  <a href="patientIndex"><h2>北京协和医院</h2></a>
 						    </div>
 					     <div class="top-menu">
 							<span class="menu"> </span>
 								<ul class="cl-effect-16">
-								<li><a href="patientIndex.jsp" data-hover="主页">主页</a></li>
-								<li><a href="patientAbout.jsp" data-hover="关于">关于</a></li>
-								<li><a href="patientInfo.jsp" data-hover="我的门诊">我的门诊</a></li>
-								<li><a href="patientRecord.jsp" data-hover="我的病历">我的病历</a></li>
-								<li><a href="patientAppoint.jsp" data-hover="我的预约">我的预约</a></li>
+								<li><a href="patientIndex" data-hover="主页">主页</a></li>
+								<li><a href="patientAbout" data-hover="关于">关于</a></li>
+								<li><a href="patientInfo" data-hover="我的门诊">我的门诊</a></li>
+								<li><a href="patientRecord.html" data-hover="我的病历">我的病历</a></li>
+								<li><a href="patientAppoint.html" data-hover="我的预约">我的预约</a></li>
 								<li style="color: white">|</li>
 								<li><span class="glyphicon glyphicon-qrcode"  data-toggle="modal" data-target="#scanQRcode" data-backdrop="static" style="cursor: pointer;color: white"></span></li>
 								<li class="dropdown" style="text-align: left;">
 									<a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-user"></span></a>
 									<ul class="dropdown-menu" role="menu" id="patient-contents">
-										<li><a  class="active" href="patientProfile.jsp"><span class="glyphicon glyphicon-cog"></span> 修改资料</a></li>
-										<li><a href="login.jsp"><span class="glyphicon glyphicon-log-out"></span> 退出</a></li>
+										<li><a  class="active" href="patientProfile"><span class="glyphicon glyphicon-cog"></span> 修改资料</a></li>
+										<li><a href="login"><span class="glyphicon glyphicon-log-out"></span> 退出</a></li>
 									</ul>
 			  					</li>		
 								  <div class="clearfix"></div>
@@ -185,7 +185,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			<div class="footer text-center" style="padding-bottom: 0; text-align: center;">
 				<div class="container">
 					<div class="copy">
-		              <p style="color: black">Copyright &copy; 2016. School of Electronics Engineering and Computer Science, Peking University.</p>
+		              <p style="color: black">Copyright &copy; 2018. Information office, Peking Union Medical College Hospital.</p>
 		            </div>
 				</div>
 			</div>

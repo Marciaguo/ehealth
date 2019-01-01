@@ -36,7 +36,7 @@
 	//装载JDBC驱动程序
 	Class.forName("com.mysql.jdbc.Driver").newInstance();
 	//设置数据库连接字符串
-	strCon="jdbc:mysql://101.201.40.158:3306/ehealth";
+	strCon="jdbc:mysql://127.0.0.1:3306/ehealth";
 	//连接数据库
 	sqlCon=java.sql.DriverManager.getConnection(strCon,"root","123456");
 	//创建一个可以滚动的只读的SQL语句对象
@@ -44,7 +44,7 @@
 	//准备SQL语句
 	String tell = request.getParameter("tell");
 	strSQL="SELECT * FROM patient_detail where tel='"+tell+"'";
-	
+
 	//执行SQL语句并获取结果集
 	sqlRst=sqlStmt.executeQuery(strSQL);
 	//获取记录总数
@@ -93,7 +93,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					<div class="top-header">
 						<div class="container">
 							<div class="logo">
-							  <a href="doctorIndex.html"><h2>北京大学<span>第一医院</span></h2></a>
+							  <a href="doctorIndex.html"><h2>北京协和医院</h2></a>
 						    </div>
 					     <div class="top-menu">
 							<span class="menu"> </span>
@@ -222,7 +222,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						<td><%=sqlRst.getString(6)%></td>
 						<td><%=sqlRst.getString(7)%></td>
 			                  <td>
-			                  <a href="doctorPatientEachShow.jsp?id=<%=sqlRst.getString(2)%>&tel=<%=sqlRst.getString(11)%>" value="<%=sqlRst.getString(2)%>"><i class="glyphicon glyphicon-search templatemo-social-icon" title="查看" ></i></a>
+			                  <a href="doctorPatientEachShow?id=<%=sqlRst.getString(2)%>&tel=<%=sqlRst.getString(11)%>" value="<%=sqlRst.getString(2)%>"><i class="glyphicon glyphicon-search templatemo-social-icon" title="查看" ></i></a>
 			      <!--        <i class="glyphicon glyphicon-pencil templatemo-social-icon" title="维护诊疗计划" data-toggle="modal" data-target="#<%=sqlRst.getString(1)%>" data-backdrop="static" ></i>        --> 
 			                  <i class="glyphicon glyphicon-share-alt templatemo-social-icon" title="导出" data-toggle="modal" data-target="#" data-backdrop="static" ></i>
 			             <!--   <div id="<%=sqlRst.getString(1)%>" class="modal fade" >
@@ -401,4 +401,4 @@ sqlRst.close();
 sqlStmt.close();
 //关闭数据库
 sqlCon.close();
-%> 
+%>

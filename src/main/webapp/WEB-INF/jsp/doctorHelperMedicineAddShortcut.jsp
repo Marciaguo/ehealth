@@ -23,7 +23,7 @@ response.setContentType("text/html; charset=utf-8");
 <title>往数据库插入数据</title>
 </head>
 	<body>
-		<sql:setDataSource driver="com.mysql.jdbc.Driver" url="jdbc:mysql://101.201.40.158:3306/ehealth?useUnicode=true&characterEncoding=gbk" user="root" password="123456" />
+		<sql:setDataSource driver="com.mysql.jdbc.Driver" url="jdbc:mysql://127.0.0.1:3306/ehealth?useUnicode=true&characterEncoding=gbk" user="root" password="123456" />
 		<c:catch var="error">
 		<c:set var="medicine" value="<%=medicine%>"/><c:set var="num" value="<%=num%>"/><c:set var="fre" value="<%=fre%>"/>
 		<c:set var="remark" value="<%=remark%>"/><c:set var="demand" value="<%=demand%>"/>
@@ -39,7 +39,7 @@ response.setContentType("text/html; charset=utf-8");
 			</sql:update>
 		</c:catch>
 		<c:out value="${error}"></c:out><br>
-		<c:redirect url="/static/doctorHelper.jsp">
+		<c:redirect url="/static/doctorHelper">
 		  <c:param name="page" value="<%=intpage%>"><%=intpage%></c:param>
 		</c:redirect>
 		<c:set var="temp" value="value" scope="session"></c:set>

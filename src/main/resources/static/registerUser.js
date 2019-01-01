@@ -184,10 +184,10 @@ function saveTwo() {
         data: param,
         success: function (data) {
         	if (data["result"] == "d") {
-        		setTimeout("javascript:location.href='doctorIndex.jsp'", 1500); 
+        		setTimeout("javascript:location.href='doctorIndex'", 1500);
         	}
         	else if (data["result"] == "p") {
-        		setTimeout("javascript:location.href='patientIndex.jsp'", 1500); 
+        		setTimeout("javascript:location.href='patientIndex'", 1500);
         	}
         },
         error: function (e) {
