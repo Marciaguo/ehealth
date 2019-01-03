@@ -34,7 +34,7 @@ try{
      //session.setAttribute("QQ_name",Q_name);//把获取的Qname列值存在session容器中并标关键字为QQ_name。 保存的数据可以用session.geiAttribute来获取。
      String d_p=rs.getString("d_p");
      if("d".equals(d_p))
-     response.sendRedirect("static/doctorIndex.html");
+     response.sendRedirect("doctorIndex");
      if("p".equals(d_p))
      response.sendRedirect("PatientIndex.html");
    }

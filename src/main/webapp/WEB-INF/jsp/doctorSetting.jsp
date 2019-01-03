@@ -628,7 +628,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							java.lang.String strSQLG;//SQL语句
 
 							//准备SQL语句
-							strSQLG="select *from patient_divide";
+							strSQLG="select *from patient_detail";
 							//执行SQL语句并获取结果集
 							sqlRstG=sqlStmt1.executeQuery(strSQLG);
 							//获取记录总数

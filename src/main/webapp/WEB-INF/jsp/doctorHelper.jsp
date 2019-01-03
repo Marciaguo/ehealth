@@ -40,7 +40,7 @@
 	//装载JDBC驱动程序
 	Class.forName("com.mysql.jdbc.Driver").newInstance();
 	//设置数据库连接字符串
-	strCon="jdbc:mysql://101.201.40.158:3306/ehealth";
+	strCon="jdbc:mysql://127.0.0.1:3306/ehealth";
 	//连接数据库
 	sqlCon=java.sql.DriverManager.getConnection(strCon,"root","123456");
 	//创建一个可以滚动的只读的SQL语句对象
@@ -147,7 +147,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				    		String DBUser = "root"; //mysql用户名 
 				    		String DBPasswd = "123456"; //mysql密码 
 				    		String DBName = "ehealth"; //数据库名 
-				    		String connUrl = "jdbc:mysql://101.201.40.158/" + DBName + "?user=" + DBUser + "&password=" + DBPasswd; 
+				    		String connUrl = "jdbc:mysql://127.0.0.1/" + DBName + "?user=" + DBUser + "&password=" + DBPasswd;
 				    		Class.forName(driverName).newInstance(); 
 				    	    Connection con=DriverManager.getConnection(connUrl);
 				    	    Statement sql=con.createStatement();

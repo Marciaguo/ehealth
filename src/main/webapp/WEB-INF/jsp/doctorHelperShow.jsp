@@ -87,7 +87,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					<div class="panel-group" id="accordion">
 		    	 <!-- 连接数据库 -->
 				<c:catch var="ex">
-                <sql:setDataSource var="dataSour" driver="com.mysql.jdbc.Driver" url="jdbc:mysql://101.201.40.158:3306/ehealth" user="root" password="123456"/>
+                <sql:setDataSource var="dataSour" driver="com.mysql.jdbc.Driver" url="jdbc:mysql://127.0.0.1:3306/ehealth" user="root" password="123456"/>
                 </c:catch>
                 <c:if test="${ex != null}">
                                                     数据库连接失败，请联系管理员！

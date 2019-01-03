@@ -16,7 +16,7 @@ response.setContentType("text/html; charset=utf-8");
 <title>往数据库插入数据</title>
 </head>
 	<body>
-		<sql:setDataSource var="dataSour" driver="com.mysql.jdbc.Driver" url="jdbc:mysql://101.201.40.158:3306/ehealth?useUnicode=true&characterEncoding=gbk" user="root" password="123456" />
+		<sql:setDataSource var="dataSour" driver="com.mysql.jdbc.Driver" url="jdbc:mysql://127.0.0.1:3306/ehealth?useUnicode=true&characterEncoding=gbk" user="root" password="123456" />
 		<c:catch var="error">
 		<c:set var="newitem" value="<%=newitem %>" />
 		<c:if test="${newitem !='' and newitem!=null}">

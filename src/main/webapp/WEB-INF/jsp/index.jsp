@@ -43,7 +43,7 @@
 			<div class="col-md-offset-2 col-md-8 col-sm-12">
 				<div class="home-thumb">
 					<h1 class="wow fadeInUp" data-wow-delay="0.4s">E-Health欢迎您</h1>
-          			<h3 class="wow fadeInUp" data-wow-delay="0.6s"><strong>北京协和</strong>医院<strong>欢迎您</strong>使用本系统！请<strong>登录</strong>以获得更多资讯。
+          			<h3 class="wow fadeInUp" data-wow-delay="0.6s"><strong>北京协和医院</strong>欢迎您使用本系统！请<strong>登录</strong>以获得更多资讯。
           			</h3>
           			<a href="login" class="btn btn-lg btn-default smoothScroll wow fadeInUp hidden-xs" data-wow-delay="0.8s">点击登录</a>
 				</div>

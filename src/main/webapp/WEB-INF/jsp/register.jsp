@@ -40,7 +40,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					<div class="top-header">
 						<div class="container">
 							<div class="logo">
-							  <a href=""><h2>北京大学<span>第一医院</span></h2></a>
+							  <a href=""><h2>北京协和医院</h2></a>
 						    </div>
 							<!-- script-for-menu -->
 								<script>

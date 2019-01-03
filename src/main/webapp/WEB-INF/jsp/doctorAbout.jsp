@@ -83,10 +83,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		 <h3 class="tittle wel" style="font-size: 1.9em">关于<a class="pull-right" style="font-size: 17px; padding-top: 1%; padding-right: 1.5%" href="doctorAboutAdd.html"><input type="button" name="" value="修改" ></a></h3>
 				<div class="about-top">
 					<div class="col-md-7 about-top-right send">
-						<h4>北京大学第一临床医学院</h4>
-						<p>北京大学第一医院（简称“北大医院”）位于北京老皇城内，是距离中南海最近的医院，是一所融医疗、教学、科研、预防为一体的大型综合性三级甲等医院。</p>&nbsp
+						<h4>北京协和医院</h4>
+						<p>北京协和医院（英语：Peking Union Medical College Hospital）是一所位于中国北京市东城区，集医疗、科研、教学为一体的大型综合三级甲等医院。它隶属于中国医学科学院/北京协和医学院，是北京协和医学院的临床医学院，同时也是中国医学科学院的临床医学研究所，中华人民共和国卫生部指定的诊治疑难重症的技术指导中心之一。</p>&nbsp
  
-<p>北大医院创建于1915年，是我国最早创办的国立医院，也是国内首批建立的临床医学院之一。北大医院前身为民国教育部批准北京医科专门学校设立附属诊察所；1946年随北京医学院与北京大学合并，由此得名“北大医院”；此后经历院系调整，2000年北京大学与北京医科大学两校再次合并，医院随之更名为“北京大学第一医院”。</p>&nbsp
+<p>北京协和医院在中国乃至世界享有盛名。医院成立于1921年。现任院长赵玉沛。北京协和医院是中国最早承担外宾医疗任务的单位，医院专门设立外宾和高干门诊部，开设专门的高干、外宾、特需病区。2006年7月28日被中国奥委会定为“国家队运动员医疗服务指定医院”。</p>&nbsp
 					</div>
 					<div class="col-md-5 about-top-left">
 						<img src="../images/hospitalIntro1.jpg" class="img-responsive" alt=""/>

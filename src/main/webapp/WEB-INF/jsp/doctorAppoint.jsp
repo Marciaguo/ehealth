@@ -89,12 +89,12 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <script type="text/javascript">
 $(function () {
     $('#myId').jalendar({
-        customDay: '2017/12/01',  // Format: Year/Month/Day
+        customDay: '2018/12/01',  // Format: Year/Month/Day
         color: '#ed145a', // Unlimited Colors
         lang: 'EN' // Format: English — 'EN', Türkçe — 'TR'
     });
     $('#myId2').jalendar({
-        customDay: '2016/02/29',
+        customDay: '2019/01/02',
         color: '#023447',
         lang: 'ES',
             
@@ -185,7 +185,7 @@ $(function () {
 				    		String DBUser = "root"; //mysql用户名 
 				    		String DBPasswd = "123456"; //mysql密码 
 				    		String DBName = "ehealth"; //数据库名 
-				    		String connUrl = "jdbc:mysql://101.201.40.158/" + DBName + "?user=" + DBUser + "&password=" + DBPasswd; 
+				    		String connUrl = "jdbc:mysql://127.0.0.1/" + DBName + "?user=" + DBUser + "&password=" + DBPasswd;
 				    		Class.forName(driverName).newInstance(); 
 				    	    Connection con=DriverManager.getConnection(connUrl);
 				    	    Statement sql=con.createStatement();

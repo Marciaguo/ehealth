@@ -159,13 +159,13 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 												//装载JDBC驱动程序
 												Class.forName("com.mysql.jdbc.Driver").newInstance();
 												//设置数据库连接字符串
-												strConG="jdbc:mysql://101.201.40.158:3306/ehealth";
+												strConG="jdbc:mysql://127.0.0.1:3306/ehealth";
 												//连接数据库
 												sqlConG=java.sql.DriverManager.getConnection(strConG,"root","123456");
 												//创建一个可以滚动的只读的SQL语句对象
 												sqlStmtG=sqlConG.createStatement(java.sql.ResultSet.TYPE_SCROLL_INSENSITIVE,java.sql.ResultSet.CONCUR_READ_ONLY);
 												//准备SQL语句
-												strSQLG="select *from patient_divide";
+												strSQLG="select *from patient_detail";
 												//执行SQL语句并获取结果集
 												sqlRstG=sqlStmtG.executeQuery(strSQLG);
 												//获取记录总数
@@ -306,13 +306,13 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 												//装载JDBC驱动程序
 												Class.forName("com.mysql.jdbc.Driver").newInstance();
 												//设置数据库连接字符串
-												strCon1="jdbc:mysql://101.201.40.158:3306/ehealth";
+												strCon1="jdbc:mysql://127.0.0.1:3306/ehealth";
 												//连接数据库
 												sqlCon1=java.sql.DriverManager.getConnection(strCon1,"root","123456");
 												//创建一个可以滚动的只读的SQL语句对象
 												sqlStmt1=sqlCon1.createStatement(java.sql.ResultSet.TYPE_SCROLL_INSENSITIVE,java.sql.ResultSet.CONCUR_READ_ONLY);
 												//准备SQL语句
-												strSQL1="select *from patient_divide";
+												strSQL1="select *from patient_detail";
 												//执行SQL语句并获取结果集
 												sqlRst1=sqlStmt1.executeQuery(strSQL1);
 												//获取记录总数
